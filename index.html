@@ -5,44 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Тестовый лендинг ЖК — демо для Метрики</title>
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Yandex.Metrika counter (один раз) -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+      m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      for (var j=0; j<document.scripts.length; j++){
+        if (document.scripts[j].src === r) { return; }
+      }
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],
+      k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=104241081','ym');
+
+    ym(104241081,'init',{
+      ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer",
+      accurateTrackBounce:true, trackLinks:true
+    });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/104241081" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+
+  <!-- Глобальная переменная для app.js -->
+  <script>window.METRICA_ID = 104241081;</script>
 </head>
 <body>
-  <!-- Yandex.Metrika counter --> <script type="text/javascript"> (function(m,e,t,r,i,k,a){ m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date(); for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }} k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a) })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104241081', 'ym'); ym(104241081, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true}); </script> <noscript><div><img src="https://mc.yandex.ru/watch/104241081" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
-
-    <script>var METRICA_ID = 104241081;</script>
-
-    if (typeof METRICA_ID !== "undefined" && String(METRICA_ID).match(/^\d+$/)) {
-      ym(METRICA_ID, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-      });
-    } else {
-      console.warn("[Метрика] Укажи реальный ID счётчика в переменной METRICA_ID.");
-    }
-  </script>
-  <noscript><div><img src="https://mc.yandex.ru/watch/104241081" style="position:absolute; left:-9999px;" alt=""/></div></noscript>
-  <!-- /Yandex.Metrica -->
-
-  <section class="card">
-  <h2>Записаться на просмотр</h2>
-
-  <!-- перемещённые CTA из хедера -->
-  <div class="cta-row top-cta">
-    <a id="callLink" href="tel:+78005553535" class="btn secondary">Позвонить</a>
-    <a id="pricesLink" href="#prices" class="btn ghost">Показать цены</a>
-  </div>
-  <!-- /CTA -->
-
-  <form id="leadForm" class="form">
-    ...
-  </form>
-</section>
-  
   <main class="wrap">
     <section class="card">
       <h2>Записаться на просмотр</h2>
+
+      <!-- CTA-кнопки (перенесены из хедера) -->
+      <div class="cta-row top-cta">
+        <a id="callLink" href="tel:+78005553535" class="btn secondary">Позвонить</a>
+        <a id="pricesLink" href="#prices" class="btn ghost">Показать цены</a>
+      </div>
+
       <form id="leadForm" class="form">
         <label>Имя
           <input type="text" name="name" required />
@@ -96,7 +93,6 @@
   <script src="app.js"></script>
 </body>
 </html>
-
 
 
 
