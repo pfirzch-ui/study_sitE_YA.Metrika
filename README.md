@@ -9,3 +9,4 @@
 const METRICA_ID = YOUR_COUNTER_ID;
 // ...
 <noscript><img src="https://mc.yandex.ru/watch/YOUR_COUNTER_ID" ...></noscript>
+
