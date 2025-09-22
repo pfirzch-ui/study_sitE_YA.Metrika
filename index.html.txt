@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Тестовый лендинг ЖК — демо для Метрики</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Yandex.Metrica -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    // === IMPORTANT ===
+    // ЗАМЕНИ "YOUR_COUNTER_ID" на число ID твоего счётчика (например, 93284746)
+    const METRICA_ID = YOUR_COUNTER_ID;
+
+    if (typeof METRICA_ID !== "undefined" && String(METRICA_ID).match(/^\d+$/)) {
+      ym(METRICA_ID, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+      });
+    } else {
+      console.warn("[Метрика] Укажи реальный ID счётчика в переменной METRICA_ID.");
+    }
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/YOUR_COUNTER_ID" style="position:absolute; left:-9999px;" alt=""/></div></noscript>
+  <!-- /Yandex.Metrica -->
+
+  <header class="hero">
+    <div class="wrap">
+      <h1>ЖК «Солнечный квартал»</h1>
+      <p>Квартиры у парка. Субсидированная ипотека и рассрочка.</p>
+      <div class="cta-row">
+        <a id="callLink" href="tel:+78005553535" class="btn secondary">Позвонить</a>
+        <a id="pricesLink" href="#prices" class="btn ghost">Показать цены</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h2>Записаться на просмотр</h2>
+      <form id="leadForm" class="form">
+        <label>Имя
+          <input type="text" name="name" required />
+        </label>
+        <label>Телефон
+          <input type="tel" name="phone" required />
+        </label>
+        <label class="consent">
+          <input type="checkbox" id="consent" required />
+          Даю согласие на обработку персональных данных
+        </label>
+        <button class="btn" type="submit">Отправить заявку</button>
+      </form>
+    </section>
+
+    <section id="mortgage" class="card">
+      <h2>Рассчитать ипотеку</h2>
+      <div class="grid2">
+        <label>Стоимость, ₽
+          <input type="number" id="price" value="8000000" min="1000000" step="100000" />
+        </label>
+        <label>Первоначальный взнос, %
+          <input type="number" id="down" value="20" min="0" max="90" step="1" />
+        </label>
+        <label>Ставка, % годовых
+          <input type="number" id="rate" value="12" min="1" max="30" step="0.1" />
+        </label>
+        <label>Срок, лет
+          <input type="number" id="years" value="20" min="1" max="35" step="1" />
+        </label>
+      </div>
+      <button id="calcBtn" class="btn">Рассчитать платёж</button>
+      <p id="payment" class="muted"></p>
+    </section>
+
+    <section id="prices" class="card">
+      <h2>Цены и планировки</h2>
+      <ul class="list">
+        <li>Студия — от 6,9 млн ₽</li>
+        <li>1-комнатные — от 8,2 млн ₽</li>
+        <li>2-комнатные — от 11,5 млн ₽</li>
+      </ul>
+      <a id="downloadPlans" href="#" class="btn ghost">Скачать планировки (PDF)</a>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <small>Демо-лендинг для обучения. © Твоя фамилия</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
